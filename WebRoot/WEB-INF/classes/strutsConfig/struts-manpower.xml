@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="manpower" namespace="/" extends="default">
+		<action name="*_users" class="usersAction" method="{1}">
+			<result name="index">/manpower/departments_index.jsp</result>
+			<result name="tree">/manpower/departments_tree.jsp</result>
+	        <result name="view">/manpower/users_view.jsp</result>
+	        <result name="addInit" >/manpower/users_save.jsp</result>
+	        <result name="add"  type="redirectAction">viewUsers_users</result>
+	        <result name="modifyInit">/manpower/users_update.jsp</result>
+	        <result name="modify"  type="redirectAction">viewUsers_users</result>
+	        <result name="delete"  type="redirectAction">viewUsers_users</result>
+	        <result name="detail">/manpower/users_detail.jsp</result>
+			<result name="queryView">/query/manpower/users_view.jsp</result>
+			<result name="condition">/query/manpower/users_view.jsp</result>
+			<result name="index2">/manpower/certificates_index.jsp</result>
+			<result name="tree2">/manpower/certificates_tree.jsp</result>
+	        <result name="view2">/manpower/certificates_users_view.jsp</result>
+	        <result name="conditionDetail">/query/manpower/users_query_detail.jsp</result>
+		</action>	
+		<!-- 人资树 管理 -->
+		<action name="*_CertificatesKind" class="certificatesKindAction" method="{1}">
+			<result name="index">/manpower/certificates_kind/certificates_kind_index.jsp</result>
+			<result name="tree">/manpower/certificates_kind/certificates_kind_tree.jsp</result>
+	        <result name="view">/manpower/certificates_kind/users_view.jsp</result>
+	        <result name="addInit" >/manpower/certificates_kind/certificates_kind_save.jsp</result>
+	        <result name="add"  type="redirectAction">
+	        	<param name="actionName">updateCertificatesKindInit_CertificatesKind</param>
+	        	<param name="certificatesKind.certKindId">${certificatesKind.certKindId}</param>
+	        </result>
+	        <result name="modifyInit">/manpower/certificates_kind/certificates_kind_update.jsp</result>
+	        <result name="modify"  type="redirectAction">
+	        	<param name="actionName">updateCertificatesKindInit_CertificatesKind</param>
+	        	<param name="certificatesKind.certKindId">${certificatesKind.certKindId}</param>
+	        </result>
+	        <result name="delete" >/common/blankpage.jsp</result>
+	        <result name="detail">/certificates_kind/users_detail.jsp</result>
+		</action>	
+	</package>
+</struts>

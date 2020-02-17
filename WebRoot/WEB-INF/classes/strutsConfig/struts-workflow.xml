@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="workflow" namespace="/" extends="default">
+		<action name="*_workflow" class="processRequestAction" method="{1}"> 
+			<result name="select">/workflow/process/approve_user_select.jsp</result>
+			<result name="selectshowdia">/workflow/process/approve_user_select_showdia.jsp</result>
+			<result name="start" type="redirectAction" >
+				<param name="actionName">${wfdto.returnUrl}</param>
+				<param name="rollPage.pageCur">${rollPage.pageCur}</param>
+			</result>
+			<result name="view">${wfdto.returnUrl}</result>
+			<result name="deal" type="redirectAction" >
+				<param name="actionName">${wfdto.returnUrl}</param>
+			</result>
+			<result name="result">/workflow/process/point_view.jsp</result>
+			<result name="browse">/workflow/process/browse_idea.jsp</result>
+		</action>
+	</package>
+</struts>

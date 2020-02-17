@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+ <package name="project" namespace="" extends="default">
+        <!-- 项目管理 --> 
+         <action name="*_projects" class="projectsAction" method="{1}"> 
+            <result name="selectOrderIndex"  >/eg/orders/eg_orders_view.jsp</result> 
+            <result name="selectOrderIndexView"  >/eg/orders/eg_orders_view.jsp</result> 
+            <result name="DETAIL"  >/eg/orders/eg_orders_detail.jsp</result> 
+        </action>
+      
+ </package>
+</struts>    
