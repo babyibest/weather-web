@@ -1,54 +1,30 @@
-## 介绍
+# byweb
+a web project
+use   struts2  Developed project 
+# 介绍
+byweb 是一款基于struts2的招投标管理系统，专注于用户的招投标工作、各招标展示、致力于让招投标线上流程变得简单易用。
+# Features
+  高性能.
+  多线程.
+  多图层叠加.
+  友好的 API.
 
-《weather-react》是一个H5的天气类可视化搭建项目。您可以通过简单的拖拽方式快速生产一个H5页面，目前行业内罕有关于H5的可视化搭建的开源项目，《weather-react》是一个相对比较完整的开源项目，仅抛砖引玉希望您喜欢。
-
+# 示例
+cache示例
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring   
+  		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+		
+		<!-- <ehcache:annotation-driven cache-manager="ehCacheManager" />  -->
  
-### 编辑器整体设计
-
-- 一个组件选择区，提供使用者选择需要的组件
-- 一个编辑预览画板，提供使用者拖拽排序页面预览的功能
-- 一个组件属性编辑，提供给使用者编辑组件内部 props、公共样式和动画的功能
-- 用户在左侧组件区域选择组件添加到页面上，编辑区域通过动态组件特性渲染出每个元素组件。
-
-**项目预览**
-- 首页
-![avatar](/assets/github/sy.png)  
-- 添加模块
-
-## 开发调试
- 
- 
-### 安装依赖
-
-```
-npm i
-```
- 
-### 启动服务端
-
-```
-npm run start
-```
-
-
-##### 启动完访问http://localhost:3000 就可以看到工程页面了
- 
- 
-## 发布部署 
- 
-
-### 需要全局安装 pm2
-
-```
-npm install pm2 -g
-```
-
-### 启动命令
-
-```
-npm run publish && npm run start
-```
-
-### License
-
-Apache License 2.0
+ 		<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+       		<property name="configLocation" value="classpath:ehcache.xml" />  
+   		</bean> 
+   		
+</beans>

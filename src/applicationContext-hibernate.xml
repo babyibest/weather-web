@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	    <property name="sessionFactory">
+	        <ref bean="sessionFactory"/>
+	    </property>
+ 	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+	      	<tx:method name="save*"  	propagation="REQUIRED" rollback-for="Exception" />  
+	  		<tx:method name="del*"		propagation="REQUIRED" rollback-for="Exception" />
+	       	<tx:method name="update*" 	propagation="REQUIRED" rollback-for="Exception" />
+	       	<tx:method name="add*" 		propagation="REQUIRED" rollback-for="Exception" />
+	       	<tx:method name="verify*" 	propagation="REQUIRED" rollback-for="Exception" />
+	       	<tx:method name="exit*" 	propagation="REQUIRED" rollback-for="Exception" />
+	       	<tx:method name="find*" 	propagation="REQUIRED" read-only="true" />
+	       	<tx:method name="get*" 		propagation="REQUIRED" read-only="true" />
+    	</tx:attributes>
+	</tx:advice>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="connection.autocommit">true</prop>
+			</props>
+		</property>
+
+		<property name="mappingResources">
+			<list>
+				      
+				<!--人资管理start -->
+				<!--  -->
+				<value>
+					com/by/hctm/manpower/entity/CertAttachments.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/manpower/entity/Certificates.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/manpower/entity/Users.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/manpower/entity/CertificatesKind.hbm.xml
+				</value>
+				<!-- 人资管理 end -->
+
+				 
+
+				<!-- 系统管理 start -->
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/ConstructionEquips.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/ConstructionSubjects.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Departments.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/EquipWitness.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/MaterialNames.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/MaterialStages.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/MaterialTypes.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Messages.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/NoticeAttachments.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Notices.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Rights.hbm.xml
+				</value>
+				<!--  -->
+				<value>com/by/hctm/system/entity/Risks.hbm.xml</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/SendAttachments.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/SendReceivers.hbm.xml
+				</value>
+				<!--  -->
+				<value>com/by/hctm/system/entity/Sends.hbm.xml</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/SpuervisionEquips.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Stages.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/Subjects.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/UserRights.hbm.xml
+				</value>
+
+				<!-- 巡检记录类别表 -->
+				<value>
+					com/by/hctm/system/entity/QualityCheckKind.hbm.xml
+				</value>
+				<!-- 巡检记录标题项 -->
+				<value>
+					com/by/hctm/system/entity/QualityCheckTitle.hbm.xml
+				</value>
+
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/TSysDict.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/TSysModuleInfo.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/TSysUserInoutLog.hbm.xml
+				</value>
+				<!--  -->
+				<value>
+					com/by/hctm/system/entity/TSysUserOperLog.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/system/entity/TSysRole.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/system/entity/TSysRoleUserInfo.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/system/entity/TSysRoleRightInfo.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/system/entity/PhotoKind.hbm.xml
+				</value>
+
+				<!-- 系统管理 end -->
+
+			  
+				<!-- 公用部分 begin -->
+
+				<!--  附件信息表 -->
+				<value>
+					com/by/hctm/common/entity/Attachment.hbm.xml
+				</value>
+
+				<!--  单据编码表 -->
+				<value>
+					com/by/hctm/common/entity/SystemCodeGenerator.hbm.xml
+				</value>
+ 
+				<!-- 公用部分 end -->
+				
+				
+				
+				<!-- 项目管理  -->
+				<value>
+					com/by/hctm/project/entity/Egorder.hbm.xml
+				</value>
+				<value>
+					com/by/hctm/project/entity/EgorderDetail.hbm.xml
+				</value>
+				<value> 
+					com/by/hctm/project/entity/EgorderParameter.hbm.xml
+				</value>
+			</list>
+
+		</property>
+	</bean>
+</beans>

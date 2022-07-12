@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+ <package name="supervise" namespace="/" extends="default">
+        <action name="*_departs" class="ProjectDepartsAction" method="{1}">
+            <result name="view">/supervise/projectdeparts_view.jsp</result>
+            <result name="viewTask">/supervise/taskAlloction_view.jsp</result>
+            <result name="viewConstructPlan">/supervise/projectdeparts_view.jsp</result>
+            <result name="viewShowModalDialog" >/supervise/projects_select.jsp</result>
+            <result name="selectCP">/supervise/select_projectdeparts_view.jsp</result>
+            <result name="detail" >/supervise/projectdeparts_detail.jsp</result>
+            <result name="updateDetail" >/supervise/projectdeparts_update.jsp</result>
+            <result name="add" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="modify" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="delete" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="login">/login.jsp</result>
+            <result name="selectView">/common/select/supervise/select_project_departs.jsp</result>
+        </action>
+        
+        <!-- 监理任务书接收 -->
+        <action name="*_superviseTask" class="SuperviseTasksAction" method="{1}">
+            <result name="view">/supervise/superviseTask/superviseTask_view.jsp</result>       
+            <result name="receiveinit">/supervise/superviseTask/superviseTask_receive.jsp</result>
+            <result name="receive" type="redirectAction">viewTasks_superviseTask</result>
+            <result name="viewTask">/supervise/superviseTask、taskAlloction_view.jsp</result>
+            <result name="viewConstructPlan">/supervise/projectdeparts_view.jsp</result>
+            <result name="viewShowModalDialog" >/supervise/projects_select.jsp</result>
+            <result name="selectCP">/supervise/select_projectdeparts_view.jsp</result>
+            <result name="detail" >/supervise/projectdeparts_detail.jsp</result>
+            <result name="updateDetail" >/supervise/projectdeparts_update.jsp</result>
+            <result name="add" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="modify" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="delete" type="redirectAction">viewProjectDeparts_departs</result>
+            <result name="login">/login.jsp</result>
+        </action>
+        
+        <!-- 监理项目部组建 -->
+        <action name="*_spBuild" class="ProjectDepartsAction" method="{1}">
+        	<result name="view">/supervise/superviseProBuild/superviseProBuild_view.jsp</result>
+        	<result name="detail" >/supervise/superviseProBuild/superviseProBuild_detail.jsp</result>     
+            <result name="addInit" >/supervise/superviseProBuild/superviseProBuild_save.jsp</result>
+            <result name="add" type="redirectAction">viewProjectsDeparts_spBuild</result>
+            <result name="modifyInit" >/supervise/superviseProBuild/superviseProBuild_update.jsp</result>
+            <result name="modify" type="redirectAction">viewProjectsDeparts_spBuild</result>
+            <result name="delete" type="redirectAction">viewProjectsDeparts_spBuild</result>
+            <result name="check" >/supervise/superviseProBuild/checkTask_view.jsp</result>
+            <result name="equiqs">/supervise/superviseProBuild/superviseEquips.jsp</result>                  
+        </action>
+        
+        <!-- 项目监理(首页甘特图) -->
+        <action name="*_schual" class="projectDepartSchualAction" method="{1}">
+        	<result name="view">/supervise/supervise/supervise_schual_view.jsp</result>
+        	<result name="index">/supervise/supervise/supervise_schual_index.jsp</result>
+        	<result name="kind" >/supervise/supervise/material_kind_view.jsp</result> 
+        	<result name="source" >/supervise/supervise/material_source_view.jsp</result> 
+        	<result name="stage" >/supervise/supervise/material_stage_view.jsp</result>  
+        	<result name="forward" type="redirectAction" >
+				<param name="actionName">${actionName}</param>
+				<param name="pdm.type">${pdm.type}</param>
+				<param name="type">${pdm.type}</param>
+				<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+				<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+			</result>
+        	<result name="return" type="redirectAction" >
+				<param name="actionName">${actionName}</param>
+				<param name="projectDepartSchual.pdId">${pdm.pdId}</param>
+				<param name="projectDepartSchual.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.subjId">${pdm.subjId}</param>
+			</result>
+			<result name="viewMaterialName">/supervise/supervise/materialStages_sub.jsp</result>
+        	<result name="saveMaterialName" type="redirectAction">
+        		<param name="actionName">viewMaterialListByStage_schual</param>
+				<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+				<param name="projectDepartSchual.pdId">${projectDepartSchual.pdId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="projectDeparts.subjId">${projectDeparts.subjId}</param>
+				<param name="projectDepartSchual.subjId">${projectDeparts.subjId}</param>
+        	</result>
+        </action>
+        
+        <!-- 项目监理(资料类别) -->
+		
+		<!-- 项目监理(资料来源) -->
+		
+		<!-- 项目监理(危险点) -->
+		<action name="*_TSupDangerousPoint" class="TSupDangerousPointAction" method="{1}">
+			<result name="view">/supervise/supervise/tSupDangerousPoint/tSupDangerousPoint_view.jsp</result>
+		</action>
+		
+		<!-- 项目监理(施工单位) -->
+        <action name="*_ConstructionUnit" class="ConstructionUnitAction" method="{1}">
+        	<result name="view">/supervise/supervise/constructionUnit/constructionUnit_view.jsp</result>
+        	<result name="ContractorView">/supervise/supervise/constructionUnit/select_constructionUnit_view.jsp</result>
+        	<result name="detail" >/supervise/supervise/constructionUnit/constructionUnit_detail.jsp</result>     
+            <result name="addInit" >/supervise/supervise/constructionUnit/constructionUnit_save.jsp</result>
+            <result name="add" type="redirectAction">
+            	<param name="actionName">viewConstructionUnit_ConstructionUnit</param>
+				<param name="constructionUnit.projectDeparts.pdId">${constructionUnit.projectDeparts.pdId}</param>
+            </result>
+             <result name="modifyInit" >/supervise/supervise/constructionUnit/constructionUnit_update.jsp</result>
+            <result name="modify" type="redirectAction">
+            	<param name="actionName">viewConstructionUnit_ConstructionUnit</param>
+				<param name="constructionUnit.projectDeparts.pdId">${constructionUnit.projectDeparts.pdId}</param>
+            </result>
+            <result name="delete" type="redirectAction">
+            	<param name="actionName">viewConstructionUnit_ConstructionUnit</param>
+				<param name="constructionUnit.projectDeparts.pdId">${constructionUnit.projectDeparts.pdId}</param>
+            </result>
+        </action>
+        
+        <!-- 项目监理(数码照片) -->
+        <action name="*_photoInfo" class="PhotoInfoAction" method="{1}">
+			<result name="view">/supervise/supervise/photoInfo/photoInfo_view.jsp</result>
+			<result name="addInit">/supervise/supervise/photoInfo/photoInfo_save.jsp</result>
+			<result name="add" type="redirectAction">
+				<param name="actionName">viewPhotoInfo_photoInfo</param>
+				<param name="photoInfo.pdId">${photoInfo.pdId}</param>
+				<param name="photoInfo.pkId">${photoInfo.pkId}</param>
+			</result>
+			<result name="modifyInit">/supervise/supervise/photoInfo/photoInfo_update.jsp</result>
+			<result name="modify" type="redirectAction">
+				<param name="actionName">viewPhotoInfo_photoInfo</param>
+				<param name="photoInfo.pdId">${photoInfo.pdId}</param>
+				<param name="photoInfo.pkId">${photoInfo.pkId}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewPhotoInfo_photoInfo</param>
+				<param name="photoInfo.pdId">${photoInfo.pdId}</param>
+				<param name="photoInfo.pkId">${photoInfo.pkId}</param>
+			</result>
+			<result name="tree" >/supervise/supervise/photoInfo/photoInfo_tree.jsp</result>
+			<result name="index" >/supervise/supervise/photoInfo/photoInfo_index.jsp</result>
+			<result name="poto" >/supervise/supervise/photoInfo/photoInfo_poto.jsp</result>
+		</action>
+        <!-- 项目监理资料 -->
+        <action name="*_information" class="InformationAction" method="{1}">
+        	<result name="ViewTSupDailyInfoBuSubjectId">/supervise/supervise/workLog/workLog_view.jsp</result>
+        	<result name="addInit">/supervise/supervise/workLog/workLog_save.jsp</result>
+        	<result name="modifyInit">/supervise/supervise/workLog/workLog_update.jsp</result>
+        	<result name="detail">/supervise/supervise/workLog/workLog_detail.jsp</result>
+        	<result name="add" type="redirectAction">
+        		<param name="actionName">viewTSupDailyInfoBuSubjectId_information</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${pdsm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        	<result name="modify" type="redirectAction">
+        		<param name="actionName">viewTSupDailyInfoBuSubjectId_information</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${pdsm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        	<result name="delete" type="redirectAction">
+        		<param name="actionName">viewTSupDailyInfoBuSubjectId_information</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${pdsm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        	<result name="viewTSupWorkRelationBuSubjectId">/supervise/supervise/workRelation/workRelation_view.jsp</result>
+        	<result name="addInit_TSupWorkRelation">/supervise/supervise/workRelation/workRelation_save.jsp</result>
+        	<result name="modifyInit_TSupWorkRelation">/supervise/supervise/workRelation/workRelation_update.jsp</result>
+        	<result name="detail_TSupWorkRelation">/supervise/supervise/workRelation/workRelation_detail.jsp</result>
+        	<result name="add_TSupWorkRelation" type="redirectAction">
+        		<param name="actionName">viewTSupWorkRelationBuSubjectId_information</param>
+				<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+				<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${tsdi.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        	<result name="modify_TSupWorkRelation" type="redirectAction">
+        		<param name="actionName">viewTSupWorkRelationBuSubjectId_information</param>
+				<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+				<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${tsdi.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        	<result name="delete_TSupWorkRelation" type="redirectAction">
+        		<param name="actionName">viewTSupWorkRelationBuSubjectId_information</param>
+				<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+				<param name="pdsm.pdsmId">${pdsm.pdsmId}</param>
+				<param name="pdsm.mnId">${pdsm.mnId}</param>
+				<param name="pdsm.pdsId">${tsdi.pdsId}</param>
+				<param name="pdsm.type">${pdsm.type}</param>
+        	</result>
+        </action>
+ </package>
+</struts>    

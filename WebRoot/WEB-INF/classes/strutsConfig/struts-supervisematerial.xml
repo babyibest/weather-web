@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+ <package name="supervisematerial" namespace="/" extends="default">
+        
+        <!-- 项目监理资料(线路专业-110KV) -->
+        <action name="*_material201" class="superviseMaterial201Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material201</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material201</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material201</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+        
+        <!-- 项目监理资料(线路专业-220KV) -->
+         <action name="*_material202" class="superviseMaterial202Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material202</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material202</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material202</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+		<!-- 项目监理资料(线路专业-330KV) -->
+		<action name="*_material203" class="superviseMaterial203Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material203</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material203</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material203</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(电缆专业-110KV) -->
+		<action name="*_material204" class="superviseMaterial204Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material204</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material204</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material204</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(电缆专业-220KV) -->
+		<action name="*_material205" class="superviseMaterial205Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material205</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material205</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material205</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(电缆专业-330KV) -->
+		<action name="*_material206" class="superviseMaterial206Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material206</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material206</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material206</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(变电专业-110KV) -->
+		<action name="*_material207" class="superviseMaterial207Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material207</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material207</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material207</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(变电专业-220KV) -->
+		<action name="*_material208" class="superviseMaterial208Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material208</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material208</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material208</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        	
+        </action>
+		<!-- 项目监理资料(变电专业-330KV) -->
+		<action name="*_material209" class="superviseMaterial209Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material209</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material209</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material209</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        <!-- 项目监理资料(通信专业-基建站) -->
+        <action name="*_material210" class="superviseMaterial210Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material210</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material210</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material210</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        <!-- 项目监理资料(土建专业-110KV) -->
+        <action name="*_material211" class="superviseMaterial211Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material211</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material211</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material211</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        <!-- 项目监理资料(土建专业-220KV) -->
+        <action name="*_material212" class="superviseMaterial212Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material212</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material212</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material212</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        <!-- 项目监理资料(土建专业-330KV) -->
+        <action name="*_material213" class="superviseMaterial213Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material213</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material213</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material213</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        
+         <!-- 项目监理资料(配网计量专业) -->
+        <action name="*_material216" class="superviseMaterial216Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material216</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material216</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material216</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pdm.subjId">${pdm.subjId}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        
+        <!-- 项目监理资料(北京市地方标准) -->
+         <action name="*_material301" class="superviseMaterial301Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material301</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material301</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material301</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        
+        
+        <action name="*_material302" class="superviseMaterial302Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material302</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material302</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material302</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+        
+        <!-- 项目监理资料(北京市电力公司标准) -->
+        <action name="*_material401" class="superviseMaterial401Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material401</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material401</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material401</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+         <!-- 项目监理资料(光伏专业) -->
+         <action name="*_material501" class="superviseMaterial501Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material501</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material501</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material501</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+         <!-- 项目监理资料(风电专业) -->
+         <action name="*_material502" class="superviseMaterial502Action" method="{1}">
+        	<result name="view">/${pageName}_view.jsp</result>
+        	<result name="viewWordInfo">/stategrid/word.jsp</result>
+        	<result name="addInit">/${pageName}_save.jsp</result>
+        	<result name="add" type="redirectAction" >
+				<param name="actionName">viewSuperviseMaterial_material502</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+        	<result name="modifyInit">/${pageName}_update.jsp</result>
+	        <result name="modify" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material502</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">viewSuperviseMaterial_material502</param>
+        		<param name="projectDeparts.pdId">${projectDeparts.pdId}</param>
+        		<param name="pdm.pdmId">${pdm.pdmId}</param>
+				<param name="pdm.mnId">${pdm.mnId}</param>
+				<param name="pdm.pdsId">${pdm.pdsId}</param>
+				<param name="projectDepartSchual.pdsId">${projectDepartSchual.pdsId}</param>
+				<param name="type">${type}</param>
+				<param name="pageName">${pageName}</param>
+			</result>
+	        <result name="detail">/${pageName}_detail.jsp</result>
+        </action>
+ </package>
+</struts>    

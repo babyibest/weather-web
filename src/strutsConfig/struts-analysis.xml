@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+ 	<package name="analysis" namespace="/" extends="default">
+ 	
+ 		<!-- 安全质量 -->
+ 		<action name="*_recordsAn" class="checkRecordsAnAction" method="{1}"> 
+ 			<!-- 安全质量巡检台账列表 -->
+			<result name="view">/analysis/checkrecords/checkRecordsAn_view.jsp</result>
+			<!-- 安全质量巡检台账图表 -->
+	        <result name="viewicon" >/analysis/checkrecords/checkRecordsAn_viewicon.jsp</result>
+	        <!-- 安全质量巡检项目统计图表 -->
+	        <result name="viewicon1" >/analysis/checkrecords/checkPDepart_viewicon.jsp</result>
+		</action>
+		<!-- 监造统计分析 -->
+		<action name="*_Supervisebuild" class="SupervisebuildAction" method="{1}"> 
+			<result name="viewConstructProjectsCost">/analysis/supervisebuild/projectCost_view.jsp</result>
+			<result name="viewProviderProducts">/analysis/supervisebuild/providerProducts_view.jsp</result>
+			<result name="viewQualityReturns">/analysis/supervisebuild/qualityReturns_view.jsp</result>
+		</action>
+	</package>
+</struts>    

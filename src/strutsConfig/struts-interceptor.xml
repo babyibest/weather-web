@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		 
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.by.hctm.common.interceptor.LoginInterceptor" />
+			<interceptor-stack name="sysDefaultStacks">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor" /> 
+				<interceptor-ref name="timer" /> 
+				<interceptor-ref name="token" >
+					<param name="includeMethods">
+						saveStages,saveBids,updateBids,saveContracts,updateContracts,
+						saveContractChange,updateContractChange,saveProject,updateProjects,
+						saveTasks,updateTasks,updateLastTasks,saveTicketApply,updateTicketApply,
+						saveTicketReturned,saveConstructTA,updateConTicketApply,saveConTicketReturned,
+						saveTicket,saveConTicket,updateIncomes,saveIncomes,saveConIncomes,updateConIncomes,
+						saveUsers,updateUsers,saveSuperviseMaterial,updateSuperviseMaterial,saveWorkPoint,
+						saveCheckPlan,updateCheckPlan,saveCheckRecords,updateCheckRecords,updateCheckreturn,
+						updateWfPoint,saveArchives,updateArchives,saveAbApply,updateAbApply,saveArchivedestoryDetail,
+						updateArchivedestoryDetail,savePaperdestoryDetail,updatePaperdestoryDetail,updateArchivesReturn
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="sysDefaultStacks" />
+		
+		<global-results>
+	        <result name="timeout" type="redirect">timeout_verify</result>
+	        <result name="Exception">/common/system_error.jsp</result>
+	        <result name="wait">/common/waiting.jsp</result>
+	        <result name="invalid.token" >/common/repeat_error.jsp</result>
+	    </global-results>
+	    
+	    <!--
+	    <global-exception-mappings>
+	        <exception-mapping exception="com.hihua.base.exception.BaseException" result="Exception"/>
+	    </global-exception-mappings>
+	    -->
+	</package>
+</struts>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+		<bean id="baseDao" class ="com.by.base.dao.impl.BaseDaoHibernateImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+		<!--  login  -->
+		<bean id="validateAction" class ="com.by.hctm.common.action.ValidateUserAction" scope="prototype">
+			<property name="iUsersBiz" ref="iUsersBiz" /> 
+			<property name="iDepartmentsBIZ" ref="IDepartmentsBIZ" />
+			<property name="userInoutLogBiz" ref="userInoutLogBiz" /> 
+		</bean>
+		
+		<!--  index  -->
+		<bean id="indexInfoAction" class ="com.by.hctm.common.action.IndexInfoAction" scope="prototype">
+			<property name="iWaitForDealBiz" ref="iWaitForDealBiz" /> 
+			<property name="iWaitForDealHistoryBiz" ref="iWaitForDealHistoryBiz" /> 
+			<property name="noticesBiz" ref="INoticesBiz" />
+			<property name="iStandardsBiz" ref="iStandardsBiz"></property>
+		</bean>
+		
+		<!--  login log  -->
+		<bean id="userInoutLogBiz" class ="com.by.hctm.common.biz.impl.TSysUserInoutLogImpl">
+			<property name="baseDao" ref="baseDao" /> 
+		</bean>
+		<bean id="sessionCount" class ="com.by.hctm.common.listener.SessionCount" 
+			factory-method="setUserInoutLogBiz" depends-on="userInoutLogBiz"> 
+			<constructor-arg ref="userInoutLogBiz" /> 
+		</bean>
+		
+		<!--  attachment  --> 
+		<bean id="attachDownAction" class ="com.by.hctm.common.action.AttachmentDownloadAction" scope="prototype">
+			<property name="iAttachmentBiz" ref="iAttachmentBiz" /> 
+		</bean>
+		
+		<bean id="iAttachmentBiz" class ="com.by.hctm.common.biz.impl.AttachmentManagerImpl">
+			<property name="baseDao" ref="baseDao" /> 
+		</bean>
+		
+		<!--  cache  --> 
+		<bean id="baseDataInfosUtil" class ="com.by.hctm.common.BaseDataInfosUtil" 
+			factory-method="setICacheInfoBiz" depends-on="iCacheInfoBiz" >
+			<constructor-arg ref="iCacheInfoBiz" />
+		</bean>
+		
+		<bean id="iCacheInfoBiz" class ="com.by.hctm.common.biz.impl.CacheInfoBizImpl">
+			<property name="baseDao" ref="baseDao" /> 
+			<property name="manager" ref="ehCacheManager" /> 
+		</bean>
+		
+		<!--  dwr 
+		<bean id="dwrService" class ="com.by.hctm.common.utils.DwrService" 
+			factory-method="setIDwrServiceBiz" depends-on="iDwrServiceBiz" >
+			<constructor-arg ref="iDwrServiceBiz" />
+		</bean>
+		
+		<bean id="iDwrServiceBiz" class ="com.by.hctm.common.biz.impl.DwrServiceBizImpl">
+			<property name="baseDao" ref="baseDao" /> 
+			<property name="iWfProcessRequestBiz" ref="iWfProcessRequestBiz" />
+		</bean>
+		 --> 
+		<!--  code generator  --> 
+		<bean id="codeGeneratorUtil" class ="com.by.hctm.common.CodeGeneratorUtil" 
+			factory-method="setISystemCodeGeneratorBiz" depends-on="iSystemCodeGeneratorBiz" >
+			<constructor-arg ref="iSystemCodeGeneratorBiz" />
+		</bean>
+		
+		<bean id="iSystemCodeGeneratorBiz" class ="com.by.hctm.common.biz.impl.SystemCodeGeneratorBizImpl">
+			<property name="baseDao" ref="baseDao" /> 
+		</bean>
+		
+		<!-- 专业树 -->
+		<bean id="CommonDataAction" class ="com.by.hctm.common.action.CommonDataAction" scope="prototype">
+			<property name="ISubjectsBIZ" ref="ISubjectsBIZ" />
+			<property name="iUsersBiz" ref="iUsersBiz" /> 
+			<property name="iDepartmentsBIZ" ref="IDepartmentsBIZ" />
+			<property name="iCertificatesBiz" ref="iCertificatesBiz" />
+			<property name="certificatesKindBiz" ref="certificatesKindBiz" />
+			<property name="iProjectDepartMembersBiz" ref="iProjectDepartMembersBiz"  />
+		</bean>
+		
+</beans>
