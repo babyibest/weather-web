@@ -1,0 +1,10 @@
+
+  .RfInfo {
+    font-size: 1.3rem;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    padding-left: 15px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }

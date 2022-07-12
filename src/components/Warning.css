@@ -1,0 +1,46 @@
+
+    .wnOuter {
+      /* background: #1d1d1c; */
+      /* padding: 0 20px; */
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .wnHeaderImg {
+      width: 90px;
+      width: 70px;
+    }
+
+    .wnHeader {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 15px 20px;
+      /* background: #1b1b1b; */
+      background: rgba(0, 0, 0, 0.2)
+    }
+
+    .wnHeaderTxt {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid #fff;
+    }
+
+    .wnHeaderTxtTitle {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .wnHeaderTxtDate {
+      color: #999;
+    }
+
+    .wnBody {
+      color: #bfbfbf;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+  

@@ -1,0 +1,100 @@
+
+		.wpOuter {
+			font-size: 1.3rem;
+			color: #fff;
+		}
+
+		/* 第一栏 */
+
+		.wpLocation {
+			display: flex;
+			flex-direction: row;
+			padding-top: 10px;
+		}
+
+		.wpLocationIcon {
+			width: 15px;
+			height: 15px;
+			transform: translate(14px, 6px);
+		}
+
+		.wpLocationOuter {
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.wpLocationAdrs {
+			font-size: 1rem;
+			color: #afafaf;
+			margin-top: 5px;
+		}
+
+		/* 第二栏 */
+
+		.wpWarnOuter {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-size: 1rem;
+			flex-wrap: wrap;
+			width: 100%;
+		}
+
+		.wpWarning {
+			display: flex;
+			flex-direction: row;
+			margin-top: 30px;
+		}
+
+		.wpWarnItem:first-child {
+			margin-left: 3px;
+		}
+
+		.wpWarnItem {
+			margin-right: 20px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			background: rgba(0, 0, 0, 0.4);
+			padding: 6px 10px;
+			border-radius: 6px;
+			font-size: 0.9rem;
+		}
+
+		.wpWarnIcon {
+			width: 20px;
+		}
+
+		.wpWarnDesc {
+			margin-left: 10px;
+		}
+
+		.wpWarnUpdateTime {
+			color: #afafaf;
+			font-size: 0.9rem;
+			padding-right: 5px;
+			flex: 1;
+			text-align: right;
+		}
+
+		/* 第三栏 */
+
+		.wpMain {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+			font-size: 1.2rem;
+		}
+
+		.wpMainTemperature {
+			font-size: 4rem;
+		}
+
+		.wpMainBot {
+			font-size: 1rem;
+			margin-top: 20px;
+			padding-bottom: 20px;
+		}
+	

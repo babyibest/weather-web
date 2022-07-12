@@ -1,0 +1,222 @@
+export const js = `
+	initWPHeader()
+	function initWPHeader() {
+		var geolocation = new qq.maps.Geolocation("OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77", "myapp");
+		var options = { timeout: 8000, accuracy: 1000 };
+		var positionNum = 0;
+		if (navigator.geolocation) {
+			geolocation.getLocation(
+				function showPosition(position) {
+					positionNum++;
+					var lat = position.lat; //纬度
+					var lon = position.lng; //经度
+
+					var url = getLocationApiUrl(lon, lat)
+					ajax({ url: url }, eval)
+
+					var fc40Url = getWeather40DayApiUrl(lon, lat)
+					if (fc40Url) {
+						ajax({ url: fc40Url }, function (responseText) {
+							var fc40 = getWeather40DayApiFc40(responseText)
+							renderWPHeader(fc40)
+						})
+					} else {
+						renderWPHeader()
+					}
+				}, function showError(error) {
+					console.log(error)
+				}, options
+			)
+		} else {
+			alert("浏览器不支持地理定位");
+		}
+	}
+
+	// 上面的代码可以知道，如果用户设备支持地理定位，则运行 getCurrentPosition() 方法。如果getCurrentPosition()运行成功，则向参数showPosition中规定的函数返回一个coordinates对象，getCurrentPosition() 方法的第二个参数showError用于处理错误，它规定当获取用户位置失败时运行的函数。
+	// 我们先来看函数showError()，它规定获取用户地理位置失败时的一些错误代码处理方式：
+
+
+	window.WPHeaderCb = function(res) {
+		var cityEl = document.getElementById('WPHeaderCity')
+		var locationEl = document.getElementById('WPHeaderLocation')
+		if (res.data && res.data.station) {
+			var station = res.data.station
+			cityEl.innerText = station.provincecn + ' | ' + station.distictcn
+			locationEl.innerText = station.namecn
+		}
+	}
+
+	function renderWPHeader(fc40) {
+		fc40 = fc40 || [
+			{
+				"001": "01",
+				"002": "01",
+				"003": "30",
+				"004": "16",
+				"005": "1",
+				"006": "0",
+				"007": "8",
+				"008": "8",
+				"009": "20180529",
+				"010": "四月十五",
+				"014": "04:50",
+				"015": "19:33",
+				"016": "星期二",
+				"017": "",
+				"018": "",
+				"019": "0.0",
+				"020": "0.0",
+				"011": "30",
+				"012": "优",
+				"013": "1",
+				"000": "201805291100"
+			}
+		]
+		var data = fc40[0]
+
+		var wpMainTemperature = document.getElementById('wpMainTemperature')
+		var wpWarnDesc = document.getElementById('wpWarnDesc')
+		var wpWarnUpdateTime = document.getElementById('wpWarnUpdateTime')
+		var weatherPhenomena = document.getElementById('weatherPhenomena')
+		var wpMainBot = document.getElementById('wpMainBot')
+
+		wpMainTemperature.innerText = data['003'] + '°'
+		wpWarnDesc.innerText = data['011'] + '' + data['012']
+		wpWarnUpdateTime.innerText = data['000'].slice(8, 10) + ':' + data['000'].slice(10, 12) + '更新'
+		weatherPhenomena.innerText = weatherMap[data['001']]
+		wpMainBot.innerText = directionMap[data['007']] + speedMap[data['005']]
+	}
+`
+export const html = `
+	<div class="wpOuter">
+		<div class="wpLocation">
+			<img class="wpLocationIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEP0lEQVRYR6WXechlcxzGP4+xrzMNSmQ0kTGTpQlN2WcINZOMNY2IaTQa+5YthLGG0jCaLKGEYaQsyZrImDL4Q/Y1Q9kjO4+et995O+99773n3Ne3bqfuOb/v7/l9l+f5/sSAZntj4AhgN2BrYAtAgIF3gEeBFyX908Z1FrYy21OBy4HDgHUbFn0KnCzp+SbnjQBsZ7M7gBOLs5+A+4AHgY+B74CtgEkF3PHA5uXbu4AF/aLRF4DticBTwB7AZ8B1wD2Sfut1sgL4bOBSYEPgWWCOpN+7rekJwHbePQccALwKzJb0Q1NIq/e2pwBJQaJzp6T5gwK4ALgWeBOYIemPtpvXQGwHvAVsChwj6aFOH10jYDuoPwF+BaZJ+qq+0PaWwGnAPuX/pOQV4DZJ33d8m5q4F/gAmCLp3/r7XgBSZPOA8yTd2OHwTOAaYP0uEUmKDpH0ei0K2SNdsS0wV9KKvgBsbwD8CPwNTKwXj+1jgQeApGMR8DSQrtildMo04FtgJ0l5DpntKp3LJC1oAnB0abEVkubWnEwonbARsJek1zoik/9XZXNgqaSFtbW7l3cfSdq+CcBNwFn5Sbql5uQcIOlYIimnH2W29wRWAmm58VXh2h4H/JUFktZqArC8UO2Rkh6pAQjFHh6ykfR4r46wnfRtBuwo6f3a+m8KQSWtw4U6qghtPwkcmp+k5LjKYzadExCSHusDIDWRtusE8AWwTfRD0ppqfTcAy4CQRrg8VFoBWAxcCNwu6dQeKahynbacUOcO238CawPjJEW4hqwbgEuAK4HFki6uAZgMJKRZs7+klzuKcL3CmNM7QdpO4YUH1kiKgg5bNwD7RU6B1ZLibNhsRwvOL214RtGJ5HPnbArs2qMN03oRtOWSjmoCkIpNHtNWkyR9XotClPF+YISTmsMQUWonnVAHHkGaBSyUtLQvgLy0HbIJ6VwvKSQywmxnJshQkpyn7wN4CXBznYCKrxRedYjJksKKvVNQFlXF9HOp2jzHZLZvAM4FnpA0u9NJPzmOFM8M70u6aCy7294E+BLI8yBJScUI6wcg/B4pjiZMlfThoCBsV627UtKMbuubJqJUbio4XTGz3r9NYGynbd8F1gGmS1o9FgAZyd6LKgJXSMpQ2spsP5OwAw9LisB1tTZDaUay1ENslqQXmhDYPiGzI/ALsIOkr8cMoHRFTn4ZEEeph56zYZmWwpgRpEWS0p49rTECBUC+S0gPBCJWGVCH+bzybjtSmwjtW56J2Kjv6mhaASggcqK3y2h1taRoxgirVX3uClHDPPtaawAFREbtN4CMbcdJCmMOme3MCpkZciXLyV9q2jzvBwJQNsqYlkEl/HBwrl9lEoo6RitOknR3m83HBKCAuAqIVKfKTyk6MB64VdLpbTf/PwASuUxIdW7PkLp321txBXLgFNRynjrIyJaKz/1xXuelpE0k/gPsi60w2jdB1QAAAABJRU5ErkJggg=="
+			 alt="">
+			<div class="wpLocationOuter">
+				<span class="wpLocationTitle" id="WPHeaderLocation">中关村南大街46号</span>
+				<span class="wpLocationAdrs" id="WPHeaderCity">北京 | 海淀区</span>
+			</div>
+		</div>
+		<div class="wpWarning">
+			<div class="wpWarnOuter">
+				<div class="wpWarnItem">
+					<span class="apiIocn q"></span>
+					<span class="wpWarnDesc" id="wpWarnDesc">178 中度</span>
+				</div>
+				<div class="wpWarnItem">
+					<img class="wpWarnIcon" src="data:image/png;base64,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"
+					 alt="">
+					<span class="wpWarnDesc"></span>
+				</div>
+				<span class="wpWarnUpdateTime" id="wpWarnUpdateTime">11:05 更新</span>
+			</div>
+		</div>
+		<div class="wpMain">
+			<div>
+				<span class="wpMainTemperature" id="wpMainTemperature">-6°</span>
+				<span class="wpMainDesc" id="weatherPhenomena">大到暴雪 </span>
+			</div>
+			<span class="wpMainBot" id="wpMainBot">相对湿度 41% | 西北风1级</span>
+		</div>
+	</div>
+`
+export const css = `
+		.wpOuter {
+			font-size: 1.3rem;
+			color: #fff;
+		}
+
+		/* 第一栏 */
+
+		.wpLocation {
+			display: flex;
+			flex-direction: row;
+			padding-top: 10px;
+		}
+
+		.wpLocationIcon {
+			width: 15px;
+			height: 15px;
+			transform: translate(14px, 6px);
+		}
+
+		.wpLocationOuter {
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.wpLocationAdrs {
+			font-size: 1rem;
+			color: #afafaf;
+			margin-top: 5px;
+		}
+
+		/* 第二栏 */
+
+		.wpWarnOuter {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-size: 1rem;
+			flex-wrap: wrap;
+			width: 100%;
+		}
+
+		.wpWarning {
+			display: flex;
+			flex-direction: row;
+			margin-top: 30px;
+		}
+
+		.wpWarnItem:first-child {
+			margin-left: 3px;
+		}
+
+		.wpWarnItem {
+			margin-right: 20px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			background: rgba(0, 0, 0, 0.4);
+			padding: 6px 10px;
+			border-radius: 6px;
+			font-size: 0.9rem;
+		}
+
+		.wpWarnIcon {
+			width: 20px;
+		}
+
+		.wpWarnDesc {
+			margin-left: 10px;
+		}
+
+		.wpWarnUpdateTime {
+			color: #afafaf;
+			font-size: 0.9rem;
+			padding-right: 5px;
+			flex: 1;
+			text-align: right;
+		}
+
+		/* 第三栏 */
+
+		.wpMain {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+			font-size: 1.2rem;
+		}
+
+		.wpMainTemperature {
+			font-size: 4rem;
+		}
+
+		.wpMainBot {
+			font-size: 1rem;
+			margin-top: 20px;
+			padding-bottom: 20px;
+		}
+	`
