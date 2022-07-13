@@ -21,12 +21,13 @@ yarn-debug.log*
 yarn-error.log*
 
 # test
-test.html
-test.js
+.test.html
+.test.js
 
 # config
-config.js
-configReplace.js
+.config.js
+.configReplace.js
 
 .idea
 
+.package-lock.json

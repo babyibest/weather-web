@@ -1,6 +1,6 @@
 ## 介绍
 
-《weather-react》是一个H5的天气类可视化搭建项目。您可以通过简单的拖拽方式快速生产一个H5页面，目前行业内罕有关于H5的可视化搭建的开源项目，《weather-react》是一个相对比较完整的开源项目，仅抛砖引玉希望您喜欢。
+《weather-react》是一个天气类的H5可视化搭建项目。您可以通过简单的拖拽方式快速生产一个H5页面，目前行业内罕有关于H5的可视化搭建的开源项目，《weather-react》是一个相对比较完整的开源项目，仅抛砖引玉希望您喜欢。
 
  
 ### 编辑器整体设计
@@ -11,10 +11,18 @@
 - 用户在左侧组件区域选择组件添加到页面上，编辑区域通过动态组件特性渲染出每个元素组件。
 
 **项目预览**
+- 登录
+![登录](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/dl.png)  
 - 首页
-![avatar](/assets/github/sy.png)  
+![首页](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/sy.png)  
+- 选择模块
+![选择模块](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/szmk.png)  
 - 添加模块
-
+![添加模块](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/tjmk.png)  
+- 修改样式
+![修改样式](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/xgys.png)  
+- 导出H5
+![导出H5](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/dch5.png)   
 ## 开发调试
  
  
@@ -43,10 +51,10 @@ npm run start
 npm install pm2 -g
 ```
 
-### 启动命令
+### 部署
 
 ```
-npm run publish && npm run start
+ npm run build
 ```
 
 ### License
