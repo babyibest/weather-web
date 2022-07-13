@@ -1,0 +1,32 @@
+
+    .liOuter {
+      color: #fff;
+      font-size: 1.3rem;
+    }
+
+    .liHeader {
+      padding: 20px;
+      border-bottom: 1px solid #999;
+    }
+
+    .liMain {
+      overflow: hidden;
+    }
+
+    .liItem {
+      font-size: 1rem;
+      box-sizing: border-box;
+      padding: 6% 0px;
+      width: 50%;
+      float: left;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid #999;
+      padding-left: 8%;
+    }
+
+    .liItemContent {
+      margin-left: 5%;
+    }
+  
