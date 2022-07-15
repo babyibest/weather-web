@@ -1,6 +1,6 @@
 ## 介绍
 
-《weather-react》是一个天气类的H5可视化搭建项目。您可以通过简单的拖拽方式快速生产一个H5页面，目前行业内罕有关于H5的可视化搭建的开源项目，《weather-react》是一个相对比较完整的开源项目，仅抛砖引玉希望您喜欢。
+《weather-web》是一个天气类的H5可视化搭建项目。您可以通过简单的拖拽方式快速生产一个H5页面，目前行业内罕有关于H5的可视化搭建的开源项目，《weather-web》是一个相对比较完整的开源项目，仅抛砖引玉希望您喜欢。
 
  
 ### 编辑器整体设计
@@ -25,7 +25,7 @@
 ![导出H5](https://github.com/xianzifeng/weather-imgs/blob/master/github-weather-react/dch5.png)   
 ## 开发调试
  
- 
+
 ### 安装依赖
 
 ```
